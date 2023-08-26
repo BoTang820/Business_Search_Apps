@@ -1,0 +1,26 @@
+.carousel-item img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+:host ::ng-deep .mat-ripple-element {
+  position: absolute;
+}
+
+::ng-deep .mat-tab-label {
+  width: 100%;
+  margin: auto;
+  justify-content: center !important;
+}
+
+.map {
+  background-color: red;
+  width: 100%;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  position: relative; /* If you want text inside of it */
+}
+
+i:hover {
+  cursor: pointer;
+}

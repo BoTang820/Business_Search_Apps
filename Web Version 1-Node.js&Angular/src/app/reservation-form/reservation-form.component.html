@@ -1,0 +1,90 @@
+<div
+  class="modal fade"
+  id="reservationFormModal"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  aria-labelledby="reservationFormModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" my-0 py-0>
+        <h2 class="modal-title my-0 py-0" id="reservationFormModalLabel">
+          Reservation form
+        </h2>
+      </div>
+      <div class="modal-body">
+        <h3 class="text-center m-3 fw-bold py-0 my-0">
+          {{ businessName }}
+        </h3>
+
+        <form
+          class="needs-validation"
+          novalidate
+          (ngSubmit)="onSubmit()"
+          #reservationForm="ngForm"
+          id="reservationForm"
+        >
+          <div class="mb-3 form-group">
+            <label for="email" class="col-form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              required
+              id="email"
+              [(ngModel)]="reservation.email"
+              name="email"
+              #email
+            />
+            <div class="invalid-feedback">
+              <p *ngIf="reservation.email != undefined">
+                Email must be a valid email address
+              </p>
+              <p *ngIf="reservation.email == undefined">Email is required</p>
+            </div>
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="date" class="col-form-label">Date</label>
+            <input
+              type="date"
+              class="form-control"
+              required
+              id="date"
+              [(ngModel)]="reservation.date"
+              name="date"
+            />
+            <div class="invalid-feedback">Date is required</div>
+          </div>
+
+          <div class="mb-3 form-group">
+            <label for="time" class="col-form-label">Time</label>
+            <input
+              type="time"
+              class="form-control"
+              required
+              id="time"
+              [(ngModel)]="reservation.time"
+              name="time"
+            />
+          </div>
+
+          <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn btn-danger">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          #closeModal
+          type="button"
+          class="btn btn-dark"
+          data-bs-target="#reservationFormModal"
+          (click)="onClose()"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
