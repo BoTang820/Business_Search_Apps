@@ -1,1 +1,0 @@
-function resetForm(){"use strict";var o=document.querySelectorAll(".needs-validation");const t=document.getElementById("reservationFormModal");bootstrap.Modal.getInstance(t).hide(),Array.prototype.slice.call(o).forEach(function(e){e.classList.remove("was-validated"),e.reset()})}
