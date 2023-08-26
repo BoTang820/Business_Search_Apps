@@ -1,0 +1,8 @@
+.nav-link p {
+  color: black;
+}
+
+.active {
+  border: 2px solid black;
+  border-radius: 15px;
+}
